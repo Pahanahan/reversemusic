@@ -200,9 +200,10 @@ body {
 
 .main__answer {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
-  margin: 0 auto;
+  flex-wrap: wrap;
+  /* margin: 0 auto; */
   gap: 10px;
   background-color: #c6bcf5;
   padding: 20px;
@@ -225,6 +226,7 @@ body {
   background-color: #f0f0f0;
   padding: 10px;
   border-radius: 5px;
+  margin-bottom: 10px;
 }
 
 .main__answer button {
@@ -246,4 +248,35 @@ body {
 
 .hidden {
   display: none;
+}
+
+@media (max-width: 560px) {
+  .main__answer input {
+    width: 400px;
+  }
+}
+@media (max-width: 450px) {
+  .main__answer input {
+    width: 350px;
+  }
+  .main__box-time {
+    font-size: 50px;
+  }
+}
+@media (max-width: 400px) {
+  .main__answer input {
+    width: 300px;
+  }
+
+  .header__title {
+    font-size: 30px;
+  }
+}
+@media (max-width: 350px) {
+  .main__answer input {
+    width: 270px;
+  }
+  .main__box-title {
+    font-size: 24px;
+  }
 }
