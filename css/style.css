@@ -1,0 +1,249 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+}
+
+button {
+  background-color: transparent;
+  padding: 0;
+  border: 0;
+  cursor: pointer;
+}
+
+.container {
+  max-width: 960px;
+  padding: 0 10px;
+  margin: 0 auto;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  font-size: 20px;
+  background-color: bisque;
+}
+
+.header__title {
+  display: flex;
+  justify-content: center;
+  max-width: 400px;
+  font-size: 40px;
+  background-color: #b4fcb4;
+  padding: 10px;
+  margin: 10px auto;
+  margin-bottom: 30px;
+  border: 3px solid #fff;
+  border-radius: 20px;
+}
+
+.section {
+  margin-bottom: 30px;
+}
+
+.section__box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  gap: 10px;
+  background-color: #c6bcf5;
+  padding: 20px;
+  border: 3px solid #fff;
+  border-radius: 20px;
+}
+
+.section__box-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 80px;
+  border: 3px solid #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 26px;
+}
+
+.section__box-item-first {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  width: 100%;
+  height: 100%;
+}
+.section__box-item-second {
+  background-color: #6f57f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.section__box-item--active {
+  background-color: #f2f557;
+}
+
+.main {
+  position: relative;
+}
+
+.main__win {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(61, 209, 61);
+  padding: 30px;
+  font-size: 40px;
+  border: 3px solid #fff;
+  border-radius: 20px;
+  height: 200px;
+  text-align: center;
+}
+
+.main__lost {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(233, 98, 98);
+  padding: 30px;
+  font-size: 40px;
+  border: 3px solid #fff;
+  border-radius: 20px;
+  height: 200px;
+  text-align: center;
+}
+
+.main__box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  gap: 10px;
+  background-color: #c6bcf5;
+  padding: 20px;
+  border: 3px solid #fff;
+  border-radius: 20px;
+  margin-bottom: 30px;
+}
+
+.main__box-title {
+  font-size: 30px;
+  margin-bottom: 40px;
+}
+
+.main__box-time {
+  font-size: 70px;
+  color: #d40505;
+}
+
+.main__box-charts {
+  display: flex;
+  gap: 20px;
+}
+
+.main__box-chart {
+  width: 30px;
+  height: 30px;
+  background-color: #11791f;
+  border: 3px solid #fff;
+  border-radius: 50%;
+}
+
+.main__box-chart--active {
+  border: 3px solid #c43131;
+}
+
+.main__container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0 auto;
+  gap: 10px;
+  background-color: #c6bcf5;
+  padding: 20px;
+  border: 3px solid #fff;
+  border-radius: 20px;
+  margin-bottom: 30px;
+}
+
+.main__container-play,
+.main__container-record,
+.main__container-repeat {
+  cursor: pointer;
+}
+
+.main__answer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0 auto;
+  gap: 10px;
+  background-color: #c6bcf5;
+  padding: 20px;
+  border: 3px solid #fff;
+  border-radius: 20px;
+}
+
+.main__answer input {
+  width: 500px;
+  height: 50px;
+  border: 3px solid #17861c;
+  border-radius: 10px;
+  padding: 10px;
+
+  color: black;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: #f0f0f0;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.main__answer button {
+  width: 150px;
+  height: 50px;
+  border: 3px solid #17861c;
+  border-radius: 10px;
+  padding: 10px;
+
+  color: black;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: #78fa6c;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.hidden {
+  display: none;
+}
