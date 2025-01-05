@@ -60,7 +60,7 @@ function addMainContainer(e) {
     const dataActive = item.getAttribute("data-active");
     // const dataDone = item.getAttribute("data-done");
 
-    console.log(dataNumber);
+    // console.log(dataNumber);
 
     if (dataActive === "true") {
       main.classList.remove("hidden");
