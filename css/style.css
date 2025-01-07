@@ -119,6 +119,7 @@ body {
   border-radius: 20px;
   height: 200px;
   text-align: center;
+  box-shadow: 1px 1px 72px 0px rgba(0, 255, 0, 0.75);
 }
 
 .main__lost {
@@ -136,6 +137,7 @@ body {
   border-radius: 20px;
   height: 200px;
   text-align: center;
+  box-shadow: 1px 1px 72px 0px rgba(255, 0, 0, 0.75);
 }
 
 .main__box {
@@ -179,6 +181,19 @@ body {
   border: 3px solid #c43131;
 }
 
+.main__box-img {
+  position: relative;
+}
+
+.main__box-img-progress {
+  position: absolute;
+  width: 270px;
+  height: 10px;
+  background-color: #11791f;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
 .main__container {
   display: flex;
   justify-content: space-around;
@@ -189,13 +204,47 @@ body {
   padding: 20px;
   border: 3px solid #fff;
   border-radius: 20px;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 }
 
 .main__container-play,
 .main__container-record,
 .main__container-repeat {
   cursor: pointer;
+  padding: 2px;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.75);
+  transition: background-color 0.3s ease;
+}
+.main__container-play:active,
+.main__container-record:active,
+.main__container-repeat:active {
+  background-color: #17861c;
+  transform: scale(0.95);
+}
+
+.main__repeat {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 290px;
+  margin: 0 auto;
+  background-color: #c6bcf5;
+  font-size: 24px;
+  padding: 20px;
+  border: 3px solid #fff;
+  border-radius: 20px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.75);
+  transition: background-color 0.3s ease;
+}
+
+.main__repeat:active {
+  background-color: #17861c;
+  transform: scale(0.95);
 }
 
 .main__answer {
@@ -244,6 +293,13 @@ body {
   background-color: #78fa6c;
   padding: 10px;
   border-radius: 5px;
+  box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.75);
+  transition: background-color 0.3s ease;
+}
+
+.main__answer button:active {
+  background-color: #17861c;
+  transform: scale(0.95);
 }
 
 .hidden {

@@ -6,6 +6,8 @@ const mainBoxCharts = document.querySelector(".main__box-charts");
 const mainContainerPlay = document.querySelector(".main__container-play");
 const mainContainerRecord = document.querySelector(".main__container-record");
 const mainContainerRepeat = document.querySelector(".main__container-repeat");
+const mainRepeat = document.querySelector(".main__repeat");
+const mainAnswer = document.querySelector(".main__answer");
 const mainAnswerForm = document.querySelector(".main__answer form");
 const input = mainAnswerForm.querySelector("input");
 const winItem = main.querySelector(".main__win");
@@ -14,6 +16,9 @@ let arrayMusic;
 
 if (localStorage.getItem("arrayMusic")) {
   arrayMusic = JSON.parse(localStorage.getItem("arrayMusic"));
+  if (arrayMusic.length < array.length) {
+    arrayMusic = [...arrayMusic, ...array.slice(arrayMusic.length)];
+  }
 } else {
   arrayMusic = array;
 }
@@ -45,11 +50,7 @@ function renderMusicItem(arr) {
 renderMusicItem(arrayMusic);
 
 sectionBox.addEventListener("click", addMainContainer);
-
-// Эту строку нужно будет перевести в playRecords
-///////////////////////////////////////////////
-// mainAnswerForm.addEventListener("submit", checkMusic);
-///////////////////////////////////////////////
+mainRepeat.addEventListener("click", startRecordFromBegin);
 
 function addMainContainer(e) {
   mainAnswerForm.addEventListener("submit", checkMusic);
@@ -215,7 +216,8 @@ function checkMusic(e) {
       arrayMusic[dataNumber - 1].answer[0]
     }`;
     input.value = "";
-    mainAnswerForm.removeEventListener("submit", checkMusic);
+    // mainAnswerForm.removeEventListener("submit", checkMusic);
+    mainAnswer.classList.add("hidden");
 
     playAudio(audioWin);
 
@@ -231,6 +233,10 @@ function checkMusic(e) {
 
     const audioErorr = new Audio("./audio/error.mp3");
     audioErorr.play();
+
+    setTimeout(() => {
+      winItem.classList.add("hidden");
+    }, 1000);
   }
 }
 
@@ -247,6 +253,17 @@ function afterWin() {
   mainBoxCharts.innerHTML = "";
   winItem.classList.add("hidden");
   winItem.classList.remove("main__win");
+  mainAnswer.classList.remove("hidden");
+}
+
+function startRecordFromBegin() {
+  currentChart = 0;
+  audioChunks = [];
+  audioArr = [];
+  mediaRecorder = null;
+  updateDots(currentChart);
+  mainContainerPlay.addEventListener("click", playChartMusic);
+  mainContainerRecord.addEventListener("click", recordChartMusic);
 }
 
 function saveToLocalStorage() {
